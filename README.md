@@ -9,4 +9,4 @@ We need to input the following parmeters to get the call and put option valuatio
 
 To Do Lists - 
 * Implement the model in Excel
-* Impement pricing charts
+* Implement pricing charts
