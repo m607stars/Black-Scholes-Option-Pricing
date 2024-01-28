@@ -16,4 +16,4 @@ Option Greeks are the derivatives of the pricing models. They give the rate of c
 
 To Do Lists - 
 * Implement the model in Excel
-* Impement pricing charts
+* Implement pricing charts
