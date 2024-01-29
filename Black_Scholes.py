@@ -4,7 +4,7 @@ import Options_Greeks
 spot_price = 140
 strike_price = 100 
 variance = 0.3   #30% 
-time_period = 0.5   #0.5 years or 6 months 
+time_period = 180/365   #0.5 years or 6 months 
 risk_free_rate = 0.1  #10%
 option_type = "call"
 
@@ -39,14 +39,29 @@ d2 = d2_function(spot_price, strike_price, risk_free_rate, time_period, variance
 
 value_call = BSM_call(d1,d2,spot_price,strike_price,risk_free_rate,time_period)
 value_put = BSM_put(d1,d2,spot_price,strike_price,risk_free_rate,time_period) 
+print("The call option value is ", value_call)
+print("The put option value is ", value_put)
+
+option_type = "call"
 value_delta = Options_Greeks.delta(spot_price, strike_price, risk_free_rate, time_period, variance, option_type)
 value_gamma = Options_Greeks.gamma(spot_price, strike_price, risk_free_rate, time_period, variance, option_type)
 value_theta = Options_Greeks.theta(spot_price, strike_price, risk_free_rate, time_period, variance, option_type)
 value_vega = Options_Greeks.vega(spot_price, strike_price, risk_free_rate, time_period, variance, option_type)
+value_rho = Options_Greeks.rho(spot_price, strike_price, risk_free_rate, time_period, variance, option_type)
+print("Call Delta value is ", value_delta)
+print("Call Gamma value is ", value_gamma)
+print("Call Theta value is ", value_theta)
+print("Call Vega value is ", value_vega)
+print("Call Rho value is ", value_rho)
 
-print("The call option value is ", value_call)
-print("The put option value is ", value_put)
-print("Delta value is ", value_delta)
-print("Gamma value is ", value_gamma)
-print("Theta value is ", value_theta)
-print("Vega value is ", value_vega)
+option_type = "put"
+value_delta = Options_Greeks.delta(spot_price, strike_price, risk_free_rate, time_period, variance, option_type)
+value_gamma = Options_Greeks.gamma(spot_price, strike_price, risk_free_rate, time_period, variance, option_type)
+value_theta = Options_Greeks.theta(spot_price, strike_price, risk_free_rate, time_period, variance, option_type)
+value_vega = Options_Greeks.vega(spot_price, strike_price, risk_free_rate, time_period, variance, option_type)
+value_rho = Options_Greeks.rho(spot_price, strike_price, risk_free_rate, time_period, variance, option_type)
+print("Put Delta value is ", value_delta)
+print("Put Gamma value is ", value_gamma)
+print("Put Theta value is ", value_theta)
+print("Put Vega value is ", value_vega)
+print("Put Rho value is ", value_rho)
